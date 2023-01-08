@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+
+int i=-1;
+
+/*int main()
+{
+    //Linear Search - Iterative Method
+    int n, flag =0, key;
+    cout<<"Enter n: ";
+    cin>>n;
+    int a[n];
+    cout<<"\nEnter elements:-\n";
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    
+    cout<<"\nEnter Key: ";
+    cin>>key;
+    
+    for(int i=0; i<n; i++)
+    {
+        if(key==a[i])
+        {
+            flag=1;
+            cout<<"\nElement found at index "<<i;
+            break;
+            
+        }
+            
+        else
+            continue;
+    }
+    
+    if(flag=0)
+        cout<<"\nElement Not Found";
+        
+    return 0;
+    
+}*/
+
+int LinearSearch(int arr[], int n, int key)
+{
+    
+    
+    if(arr[i+1]==key)
+        return i;
+    LinearSearch(arr,n,key);
+}
+
+
+int main()
+{
+    int n, flag =0, key;
+    cout<<"Enter n: ";
+    cin>>n;
+    int a[n];
+    cout<<"\nEnter elements:-\n";
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    
+    cout<<"\nEnter Key: ";
+    cin>>key;
+    
+    LinearSearch(a,n,key);
+}
