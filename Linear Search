@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int i=-1;
+int x=0;
 
 /*int main()
 {
@@ -44,16 +44,20 @@ int i=-1;
 int LinearSearch(int arr[], int n, int key)
 {
     
-    
-    if(arr[i+1]==key)
-        return i;
+    if(arr[x]==key && x<n)
+        return x;
+    else if(arr[x]!=key && x<n)
+        x++;
+    else
+        return -1;
     LinearSearch(arr,n,key);
+    
 }
 
 
 int main()
 {
-    int n, flag =0, key;
+    int res, n, flag =0, key;
     cout<<"Enter n: ";
     cin>>n;
     int a[n];
@@ -66,5 +70,13 @@ int main()
     cout<<"\nEnter Key: ";
     cin>>key;
     
-    LinearSearch(a,n,key);
+    res=LinearSearch(a,n,key);
+    cout<<"Hello";
+    if(res!=-1)
+        cout<<"Element found at index: "<<res;
+    else
+        cout<<"Element not found...";
+    
+    
+    return 0;
 }
