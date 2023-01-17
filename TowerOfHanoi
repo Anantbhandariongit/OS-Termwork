@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int steps=0;
+
+void towerOfHanoi(int n, char a, char b,
+                  char c)
+{
+    if (n == 0) {
+        return;
+    }
+    towerOfHanoi(n - 1, a, b, c);
+    cout << "Move disk " << n << " from rod " << a << " to rod " << c << endl;
+    steps++;
+    towerOfHanoi(n - 1, b, c, a);
+}
+ 
+// Driver code
+int main()
+{
+    int N;
+    
+    cout<<"Enter number of disks: ";
+    cin>>N;
+    
+ 
+    // A, B and C are names of rods
+    towerOfHanoi(N, 'A', 'B', 'C');
+    
+    cout<<"No. of steps: "<<steps<<endl;
+    return 0;
+}
