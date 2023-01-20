@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//recursive
+/*int fibo(int n)
+{
+    if(n==0)
+        return 0;
+    else if(n==1)
+        return 1;
+    else
+        return fibo(n-1) + fibo(n-2);
+}*/
+
+//iterative
+int fibo(int n)
+{
+    int res=0, r1=0, r2=1;
+    for(int i=0; i<n; i++)
+    {
+        res = r1+r2;
+        r1 = r2;
+        r2 = res;
+    }
+    return res;
+}
+
+int main()
+{
+    int n, res;
+    
+    cout<<"Enter n: ";
+    cin>>n;
+    
+    res = fibo(n);
+    
+    cout<<"\nThe sum of first "<<n<<" elements is: "<<res;
+    
+    return 0;
+}
